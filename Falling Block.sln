@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.0
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falling Block.CSharp", "Falling Block.CSharp.csproj", "{6487D1E8-27D7-06CC-A7F0-8B3F61A39644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Falling Block.CSharp.Editor", "Falling Block.CSharp.Editor.csproj", "{1BD7A546-C473-C85F-3F87-B05E9917A284}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6487D1E8-27D7-06CC-A7F0-8B3F61A39644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6487D1E8-27D7-06CC-A7F0-8B3F61A39644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6487D1E8-27D7-06CC-A7F0-8B3F61A39644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6487D1E8-27D7-06CC-A7F0-8B3F61A39644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD7A546-C473-C85F-3F87-B05E9917A284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD7A546-C473-C85F-3F87-B05E9917A284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD7A546-C473-C85F-3F87-B05E9917A284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD7A546-C473-C85F-3F87-B05E9917A284}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
