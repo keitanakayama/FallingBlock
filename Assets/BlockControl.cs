@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class BlockControl : MonoBehaviour {
 
     private RawImage image;
-    private GameObject Gage;
+    private GageControl Gage;
 
     private GameObject effect;
     private Vector3 move;
+
+    private float addwhite = 1;
+    private CreateEffect Effect;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +21,16 @@ public class BlockControl : MonoBehaviour {
         move.y = 0;
         move.z = 0;
         image = GetComponent<RawImage>();
-        Gage = GameObject.Find("CreateGage").gameObject;
+        Gage = GameObject.Find("CreateGage").gameObject.GetComponent<GageControl>();
+        Effect = GameObject.Find("CreateEffect").GetComponent<CreateEffect>();
+
+        Color col;
+        col.r = addwhite;
+        col.g = addwhite;
+        col.b = addwhite;
+        col.a = 255;
+
+        image.color = col;
 	}
 	
 	// Update is called once per frame
@@ -35,6 +47,11 @@ public class BlockControl : MonoBehaviour {
 
         //位置チェック
         if (transform.position.y <= -800)
+        {
+            DestroyBlock();
+        }
+
+        if (transform.position.y > 800)
         {
             DestroyBlock();
         }
@@ -56,7 +73,7 @@ public class BlockControl : MonoBehaviour {
         if (image.color.r > 0.9f && image.color.g < 0.11f && image.color.b < 0.11f)
         {
             //炎とか
-            GameObject.Find("CreateEffect").GetComponent<CreateEffect>().SetEffect(new Vector2(transform.position.x , transform.position.y - 0.5f ), COLOR.COLOR_RED);
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_RED);
             DestroyBlock();
         }
 
@@ -64,6 +81,7 @@ public class BlockControl : MonoBehaviour {
         else if (image.color.r > 0.9f && image.color.g > 0.9f && image.color.b < 0.11f)
         {
             //雷とか
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_YELLOW);
             DestroyBlock();
         }
 
@@ -72,15 +90,16 @@ public class BlockControl : MonoBehaviour {
         else if (image.color.r < 0.11f && image.color.g < 0.11f && image.color.b > 0.9f)
         {
             //氷とか
-            GameObject.Find("CreateEffect").GetComponent<CreateEffect>().SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_BLUE);
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_BLUE);
             DestroyBlock();
         }
 
 
         //オレンジ
-        else if (image.color.r > 0.6f && image.color.g > 0.39f && image.color.b < 0.2f)
+        else if (image.color.r > 0.6f && image.color.g > 0.39f && image.color.b < 0.2f && (image.color.r - image.color.g * image.color.r - image.color.g) > 0.0015f )
         {
             //爆発とか
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y), COLOR.COLOR_ORANGE);
             DestroyBlock();
         }
 
@@ -89,7 +108,7 @@ public class BlockControl : MonoBehaviour {
         else if (image.color.r < 0.62f && image.color.g > 0.6f && image.color.b < 0.49f)
         {
             //風とか
-            GameObject.Find("CreateEffect").GetComponent<CreateEffect>().SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_GREEN);
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y - 0.5f), COLOR.COLOR_GREEN);
             DestroyBlock();
         }
 
@@ -97,17 +116,34 @@ public class BlockControl : MonoBehaviour {
         //紫
         else if (image.color.r > 0.4f && image.color.g < 0.2f && image.color.b > 0.4f)
         {
-            //毒の雨とか
+            //ブラックホールとか
+            Effect.SetEffect(new Vector2(transform.position.x, transform.position.y), COLOR.COLOR_PUPLE);
             DestroyBlock();
         }
 		
 	}
 
+
+    //どのくらい白いかの設定
+    public void SetWhite(float white)
+    {
+        addwhite = white;
+    }
+
     //ブロック削除
     public void DestroyBlock()
     {
-        Gage.GetComponent<GageControl>().AddGage(0.15f);
-        Destroy(gameObject);
+        Gage.AddGage(0.015f);
+        //爆発
+        Effect.SetEffect(new Vector2(transform.position.x, transform.position.y));
+        //ScoreControl.AddScore((int)(100 + ((1 - addwhite) * 100)));
+
+        Color col = new Color(1,1,1,1);
+        image.color = col;
+
+        CancelMove();
+        gameObject.SetActive(false);
+        AttackControl.AddAttack(1);
     }
 
     public void SetColor(Color playercolor)
@@ -135,7 +171,7 @@ public class BlockControl : MonoBehaviour {
 
 
         //ブロックと色を混ぜる
-        Color col = Color.Lerp(blockcolor, playercolor, 0.3f);
+        Color col = Color.Lerp(blockcolor, playercolor, 0.3f * addwhite);
         col.a = 255;
         image.color = col;
 
@@ -164,4 +200,11 @@ public class BlockControl : MonoBehaviour {
         GetComponent<BoxCollider2D>().enabled = false;
         move = vec3;
     }
+
+    public void CancelMove()
+    {
+        move = new Vector3(0, 0, 0);
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
 }

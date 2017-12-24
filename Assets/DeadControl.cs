@@ -35,7 +35,7 @@ public class DeadControl : MonoBehaviour {
         {
             hitcnt++;
         }
-        else
+        //else
         {
             bHit = false;
         }
@@ -74,13 +74,13 @@ public class DeadControl : MonoBehaviour {
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetMouseButtonDown(0))
                 {
-                    SceneManager.LoadScene("title");
+                    Transitioner.Instance.TransitionToScene("title");
                 }
             }
 
             if (timecnt > 300)
             {
-                SceneManager.LoadScene("title");
+                Transitioner.Instance.TransitionToScene("title");
             }
 
         }

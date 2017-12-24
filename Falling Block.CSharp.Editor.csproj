@@ -118,6 +118,21 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween43">
+      <HintPath>Assets\Demigiant\DOTween\DOTween43.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween46">
+      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets\Demigiant\DOTween\DOTween50.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+    </Reference>
     <Reference Include="SmoothMoves_Build">
       <HintPath>Assets\SmoothMoves\Editor\SmoothMoves\SmoothMoves_Build.dll</HintPath>
     </Reference>
@@ -127,23 +142,8 @@
     <Reference Include="SmoothMoves_Runtime">
       <HintPath>Assets\SmoothMoves\Plugins\SmoothMoves\SmoothMoves_Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>Assets\Demigiant\DOTween\DOTween46.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>Assets\Demigiant\DOTween\DOTween.dll</HintPath>
-    </Reference>
     <Reference Include="TextMeshPro-1.0.55.56.0b9">
       <HintPath>Assets\TextMesh Pro\Plugins\TextMeshPro-1.0.55.56.0b9.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween50">
-      <HintPath>Assets\Demigiant\DOTween\DOTween50.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween43">
-      <HintPath>Assets\Demigiant\DOTween\DOTween43.dll</HintPath>
     </Reference>
     <Reference Include="TextMeshPro-1.0.55.56.0b9-Editor">
       <HintPath>Assets\TextMesh Pro\Plugins\Editor\TextMeshPro-1.0.55.56.0b9-Editor.dll</HintPath>
@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FX Mega Pack\Scripts\Simple Particle Scaler\Scripts\Editor\ParticleScaler.cs" />
+    <Compile Include="Assets\TirgamesAssets\Utility\Shaders\Editor\TirgamesStandardShaderGUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\FT_MagicEffect_Vol04\Shaders\Alpha-BumpSpec Rim.shader" />

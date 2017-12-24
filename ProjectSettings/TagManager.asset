@@ -7,6 +7,9 @@ TagManager:
   - Block
   - UI
   - DeadLine
+  - Enemy
+  - Destroy
+  - LastPlayer
   layers:
   - Default
   - TransparentFX

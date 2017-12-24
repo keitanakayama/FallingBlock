@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ArmControl.cs" />
+    <Compile Include="Assets\AttackControl.cs" />
     <Compile Include="Assets\BlockControl.cs" />
     <Compile Include="Assets\ButtonControl.cs" />
     <Compile Include="Assets\ColorTest.cs" />
@@ -106,9 +107,14 @@
     <Compile Include="Assets\DeadControl.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Basics.cs" />
     <Compile Include="Assets\Demigiant\DOTween\Examples\Sequences.cs" />
+    <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\CamZoom.cs" />
+    <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\FPSCam.cs" />
+    <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\PointClickSpawn.cs" />
     <Compile Include="Assets\EffectControl.cs" />
+    <Compile Include="Assets\EnemyControl.cs" />
     <Compile Include="Assets\EpicVictoryEffects\Scripts\starFxController.cs" />
     <Compile Include="Assets\EpicVictoryEffects\Scripts\vfxController.cs" />
+    <Compile Include="Assets\ExplosionControl.cs" />
     <Compile Include="Assets\FT_MagicEffect_Vol04\Script\FTME04_AnimationScrollTexture.cs" />
     <Compile Include="Assets\FT_MagicEffect_Vol04\Script\FTME04_AnimationSpriteSheet.cs" />
     <Compile Include="Assets\FT_MagicEffect_Vol04\Script\FTME04_DeadTime.cs" />
@@ -128,7 +134,11 @@
     <Compile Include="Assets\Hyperbit Arsenal\Scripts\lightScript.cs" />
     <Compile Include="Assets\ImageControl.cs" />
     <Compile Include="Assets\MouseControl.cs" />
+    <Compile Include="Assets\PlayerBarControl.cs" />
     <Compile Include="Assets\PlayerControl.cs" />
+    <Compile Include="Assets\ResultControl.cs" />
+    <Compile Include="Assets\scenetest.cs" />
+    <Compile Include="Assets\ScoreControl.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\Benchmark02.cs" />
@@ -161,6 +171,26 @@
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsAnimatedTexture.cs" />
+    <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsAnimatorPeriodParam.cs" />
+    <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsMaterialInstance.cs" />
+    <Compile Include="Assets\TitleKappa.cs" />
+    <Compile Include="Assets\TransitionBlocks\Demo\RandomCameraColor.cs" />
+    <Compile Include="Assets\TransitionBlocks\Demo\YourGameLogic.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Blocks\TransitionBlock.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionEnumRandomizer.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderAllAtOnce.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderBase.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderCheckerBoard.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderCornerWipe.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderDiamond.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderLines.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderRandom.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderSideWipe.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderSpiral.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transition Orders\TransitionOrderTeeth.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\Transitioner.cs" />
+    <Compile Include="Assets\TransitionBlocks\Scripts\TransitionSetup.cs" />
     <Compile Include="Assets\WeaponControl.cs" />
   </ItemGroup>
   <ItemGroup>

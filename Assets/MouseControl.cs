@@ -15,6 +15,7 @@ public class MouseControl : MonoBehaviour {
 	void Update () {
 
 
+        /* プレイヤーをタッチ移動
         //タッチ判定
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetMouseButtonDown(0))
         {
@@ -34,8 +35,13 @@ public class MouseControl : MonoBehaviour {
             }
 
         }
+        */
 
 
-		
+        //タップで弾発射
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+
+        }
 	}
 }

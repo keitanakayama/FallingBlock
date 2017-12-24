@@ -13,16 +13,62 @@ public class GageControl : MonoBehaviour {
     private int typecnt = 0;
     private int timecnt = 0;
 
+    private CreatePlayer createplayer;
+    private CreateBlock createblock;
+
+    private bool bNext = false;
+    private int createcnt = 0;
+
 	// Use this for initialization
 	void Start () {
 
+        createcnt = 0;
+        bNext = false;
+        gage = 0;
+        createblock = GameObject.Find("CreateBlock").GetComponent<CreateBlock>();
+        /*
         basepos = transform.localPosition;
-
+        createplayer = GameObject.Find("CreatePlayer").GetComponent<CreatePlayer>();*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+
+        GetComponent<Slider>().value = gage;
+        if (gage > 1)
+        {
+            gage = 1;
+        }
+        /*
+        if (gage <= 0 && bNext == false)
+        {
+            //攻撃を受けた
+            CreateBlock.AddWhite(0.2f);
+            //やられた演出
+            bNext = true;
+        }*/
+
+
+        //今あるブロックを少し削除
+        if (bNext == true)
+        {
+            if (createcnt % 5 == 0)
+            {
+                //createblock.DestroyBlock();
+            }
+
+            createcnt++;
+
+            if (createcnt > 100)
+            {
+                createcnt = 0;
+                gage = 1;
+                bNext = false;
+                CreateBlock.SetCnt(0);
+            }
+        }
+        /*
         gage += 0.0005f;
 
         GetComponent<Slider>().value = gage;
@@ -32,22 +78,13 @@ public class GageControl : MonoBehaviour {
         {
             gage = 0;
             //プレイヤー生成
-            Player.GetComponent<CreatePlayer>().SetCreate();
+            createplayer.SetCreate();
         }
 
 
 
         //プレイヤーがいないとき連打でゲージ上昇
-        bool bPlayer = false;
-        for (int nCntPlayer = 0; nCntPlayer < 4; nCntPlayer++)
-        {
-            if (CreatePlayer.PlayerUse[nCntPlayer] == true)
-            {
-                bPlayer = true;
-            }
-        }
-
-        if (bPlayer == false)
+        if (createplayer.GetPlayerNum() <= 0)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetMouseButtonDown(0))
             {
@@ -87,7 +124,7 @@ public class GageControl : MonoBehaviour {
             
 
 
-        }
+        }*/
         
 	}
 

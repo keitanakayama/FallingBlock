@@ -22,7 +22,7 @@ public class ButtonControl : MonoBehaviour {
         {
 
             case 0:
-                SceneManager.LoadScene("game");
+                Transitioner.Instance.TransitionToScene("game");
                 break;
         }
     }
